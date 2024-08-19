@@ -1,4 +1,10 @@
-# audiophile
+# Audiophile
+
+# Project Overview
+
+Audiophile is a small-scale e-commerce website featuring a limited selection of audio products. While the scope of this project might seem modest, my goal was to **treat it as though I were developing a large, professional-grade website**. This approach allowed me to thoroughly exercise and enhance my skills in backend development, database management, and best practices in web development.
+
+Although a simpler solution could have been implemented for a site of this size, I deliberately chose a more complex and robust approach. Through this project, I aimed to simulate real-world development scenarios, including challenges like data management, server-side logic, and creating a content management system (CMS).
 
 Your users should be able to:
 
