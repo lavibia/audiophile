@@ -1,3 +1,15 @@
-body{
-    background-color: red;
+a, h1, h2, h3, p {
+    border: 1px solid black;
+    
+}
+ol, ul{
+    list-style: none;
+    display: inline;
+}
+li {
+    display: inline;
+}
+*{
+    padding: 5px;
+    margin: 5px;
 }
