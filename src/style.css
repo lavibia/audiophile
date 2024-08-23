@@ -20,6 +20,8 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -27,11 +29,15 @@ body {
     font-family: "Manrope", sans-serif;
 }
 
+button {
+    background: none;
+    border: none;
+}
+
 .btn__pink {
     align-content: center;
     padding: 15px 30px;
     width: fit-content;
-    border: none;
     background-color: var(--dark-pink);
     color: var(--white);
     transition: background-color .25s ease-in-out;
@@ -59,8 +65,6 @@ body {
 .btn__category {
     align-content: space-between;
     padding: 0;
-    border: none;
-    background: none;
     color: var(--gray);
     transition: color .25s ease-in-out;
 }
@@ -68,6 +72,79 @@ body {
 .btn__category:hover {
     color: var(--dark-pink);
 }
-.btn__category > img{
+
+.btn__category>img {
     margin-inline-start: 13px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.uppercase{
+    text-transform:uppercase;
+}
+
+/* ********************* HEADER ***************** */
+header {
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    padding: 24px;
+}
+
+nav ul {
+    list-style: none;
+
+}
+
+.desktop__nav{
+   display: none;
+}
+
+.mobile__nav {
+    position: absolute;
+    left: 0px;
+    top: 90px;
+    width: 100vw;
+    min-height: 86%;
+    background-color: rgba(0, 0, 0, 0.575);
+}
+.nav__wrapper {
+    
+    position: absolute;
+    width: 100%;
+    min-height: 80% ;
+    background-color: var(--white);
+    padding-top: 50px;
+}
+.nav__wrapper>ul{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.mobile__nav .category__card{
+    min-height: 12.5rem; /* 200px */
+    padding: 24px;
+    display: flex;
+    align-items: flex-end;
+
+} 
+.category__card__bg{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    position: relative;
+    border-radius: 8px;
+    min-height: 9.2rem;
+    width: 100%;
+    background-color: var(--light-gray);
+}
+.category__card__bg >*{
+    margin-top:-72px;
 }
