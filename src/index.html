@@ -1,69 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content=" Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers 
     and sound specialists who are devoted to helping you get the most out of personal audio.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audiophile | Audio Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
     <script src="script.js" defer></script>
 </head>
-<body>
 
-<main>
-    
-    <section class="hero">
-        <header>
-            <!-- logo aria-hidden true -->
-             <img src="./assets/shared/desktop/logo.svg" alt="" aria-hidden="true" class="logo">
-             <nav class="desktop-nav">
-                <ol>
+<body>
+    <header>
+        <button role="dialog" class="nav__hamburger"><img src="./assets/shared/tablet/icon-hamburger.svg"
+                alt="Menu"></button>
+
+        <nav class="mobile__nav">
+            <div class="nav__wrapper">
+                <ul>
                     <li><a href="index.html" class="uppercase">Home</a></li>
                     <li><a href="#" class="uppercase">Headphones</a></li>
                     <li><a href="#" class="uppercase">Speakers</a></li>
                     <li><a href="#" class="uppercase">Earphones</a></li>
-                </ol>
-             </nav>
-        
-             <button class="cart"><img src='./assets/shared/desktop/icon-cart.svg' alt="Cart"></button>
-        
-             <!-- cart img aria-label open cart focusable -->
-        </header>
-        <div class="divider"> </div>
+                </ul>
+            </div>
 
-        <div class="hero-text-container">
-            <!-- use txt-transform in css to uppercase -->
-            <h1 class="overline">New product</h1>
-            <h2>XX99 Mark II Headphones</h2>
-            <p> Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-            <a href="#">See product</a>
+        </nav>
 
+        <nav class="desktop__nav">
+            <ul>
+                <li><a href="index.html" class="uppercase">Home</a></li>
+                <li><a href="#" class="uppercase">Headphones</a></li>
+                <li><a href="#" class="uppercase">Speakers</a></li>
+                <li><a href="#" class="uppercase">Earphones</a></li>
+            </ul>
+        </nav>
 
-    </section>
-    <section class="categories-shop">
-        <article>
-            <div class="deco-container"> </div>
-            <img src="" alt="">
-            <h3 class="uppercase" id="hp">Headphones</h3>
-            <a id='shophp' href="#" aria-labelledby="hp shophp">Shop <span class="arrow" aria-hidden="true">
-                <!-- arrow -->
-            </span></a>
-
-        </article>
+        <img src="./assets/shared/desktop/logo.svg" alt="" aria-hidden="true" class="logo">
 
 
-    </section>
+        <button class="cart"><img src='./assets/shared/desktop/icon-cart.svg' alt="Open Cart"></button>
 
-    <section class="favorite-products">
+        <!-- cart img aria-label open cart focusable -->
+    </header>
+    <main>
+        <button class="btn__category">SHOP <img src="assets/shared/desktop/icon-arrow-right.svg" alt=""></button>
+        <section class="hero">
 
-    </section>
+            <div class="divider"> </div>
+
+            <div class="hero-text-container">
+                <!-- use txt-transform in css to uppercase -->
+                <h1 class="overline">New product</h1>
+                <h2>XX99 Mark II Headphones</h2>
+                <p> Experience natural, lifelike audio and exceptional build quality made for the passionate music
+                    enthusiast.</p>
+                <a href="#">See product</a>
 
 
-</main>
-<footer>
+        </section>
+        <section class="categories-shop">
+            <article>
+                <div class="deco-container"> </div>
+                <img src="" alt="">
+                <h3 class="uppercase" id="hp">Headphones</h3>
+                <a id='shophp' href="#" aria-labelledby="hp shophp">Shop <span class="arrow" aria-hidden="true">
+                        <!-- arrow -->
+                    </span></a>
+
+            </article>
 
 
-</footer>
+        </section>
+
+        <section class="favorite-products">
+
+        </section>
+
+
+    </main>
+    <footer>
+
+
+    </footer>
 </body>
+
 </html>

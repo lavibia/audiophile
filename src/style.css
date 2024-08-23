@@ -1,54 +1,73 @@
-a,
-h1,
-h2,
-h3,
-p {
-    border: 1px solid black;
+:root {
+    --dark-pink: hsl(22, 65%, 57%);
+    --dark-gray: hsl(0, 0%, 6%);
+    --light-gray: hsl(0, 0%, 95%);
+    --off-white: hsl(0, 0%, 98%);
+    --light-pink: hsl(21, 94%, 75%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --gray: hsl(0, 0%, 40%);
 
 }
-body{
-    padding: 0;
-    margin: 0;
-}
-ol,
-ul {
-    list-style: none;
-}
 
-li {
-    display: inline;
-}
-
-* {
+html {
     box-sizing: border-box;
+    font-size: 100%;
+
 }
 
-.hero {
-    color: white;
-    padding: 20px 120px;
-    width: 100%;
-    height: 729px;
-    background-image: url('./assets/home/desktop/image-hero.jpg');
-    object-fit: fill;
-   
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
 }
 
-.cart {
-    background: none;
-    border: none;
+.btn__pink {
+    align-content: center;
+    padding: 15px 30px;
     width: fit-content;
-    height: fit-content;
+    border: none;
+    background-color: var(--dark-pink);
+    color: var(--white);
+    transition: background-color .25s ease-in-out;
 }
 
-.hero-text-container{
-    font-size: large;
-    width: 70ch;
-    padding-top: 10%;
+.btn__pink:hover {
+    background-color: var(--light-pink);
+}
 
+.btn__black {
+    align-content: center;
+    padding: 15px 30px;
+    width: fit-content;
+    border: 1px solid var(--black);
+    background-color: var(--white);
+    color: var(--black);
+    transition: background-color .25s ease-in-out;
+}
+
+.btn__black:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.btn__category {
+    align-content: space-between;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--gray);
+    transition: color .25s ease-in-out;
+}
+
+.btn__category:hover {
+    color: var(--dark-pink);
+}
+.btn__category > img{
+    margin-inline-start: 13px;
 }
