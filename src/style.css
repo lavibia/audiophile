@@ -203,7 +203,7 @@ footer {
   justify-content: space-between;
 }
 
-nav ul {
+ul {
   list-style: none;
 }
 
@@ -271,6 +271,8 @@ nav ul {
   width: min(100%, 69rem);
   margin: 0 auto;
 }
+
+/* **********Hero */
 .home__hero {
   margin: auto 0;
   color: var(--white);
@@ -297,6 +299,20 @@ nav ul {
   gap: 24px;
   height: 100%;
   text-align: center;
+}
+/* CAtegories */
+
+.visibily__hidden {
+  position: absolute;
+  top: 0;
+  left: -10000px;
+}
+.categories__wrapper ul {
+  margin: 150px auto;
+  max-width: 69rem;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* ***************************************************** 
