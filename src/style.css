@@ -262,6 +262,9 @@ ul {
 .category__card__bg > * {
   margin-top: -72px;
 }
+.category__card__bg > img {
+  height: 104px;
+}
 
 .divider {
   grid-area: 2/1/3/2;
@@ -462,6 +465,19 @@ ul {
   }
 
   /* Cateegories */
+  .category__card__bg {
+    min-height: 12.75rem;
+    width: 100%;
+  }
+  .category__card__bg > img {
+    height: 160px;
+  }
+  .categories__wrapper .category__card {
+    min-height: 16.4rem;
+    /* 263px */
+    display: flex;
+    align-items: flex-end;
+  }
   .categories__wrapper {
     width: 100%;
   }
@@ -478,6 +494,6 @@ ul {
     max-width: 69rem;
   }
   .home__categories {
-    padding: 90px 40px;
+    padding: 40px 40px;
   }
 }
