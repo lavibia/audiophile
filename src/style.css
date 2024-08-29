@@ -408,9 +408,31 @@ ul {
   height: fit-content;
 }
 .favorite__two picture > img {
-  /* min-height: 22.93rem; */
-
+  min-height: 22.93rem;
   width: 100%;
+}
+
+.favorite__three picture > img {
+  display: block;
+  min-height: 13.75rem;
+  width: 100%;
+  border-radius: 8px;
+}
+.favorite__three {
+  min-height: 26.5rem;
+  flex-direction: column;
+  display: flex;
+  gap: 24px;
+}
+.favorite__three > .fav__three__text {
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  min-height: 13.75rem;
+  border-radius: 8px;
+  justify-content: center;
+  gap: 32px;
+  padding: 0px 24px;
 }
 
 /* ***************************************************** 
