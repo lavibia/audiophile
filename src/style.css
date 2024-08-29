@@ -79,7 +79,7 @@ body {
 
 .h5 {
   font-weight: 700;
-  font-size: 1.5 rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   line-height: 2.06rem;
   letter-spacing: 1.7px;
@@ -134,11 +134,12 @@ button {
 }
 
 .btn__black {
+  min-height: 48px;
   align-content: center;
-  padding: 15px 30px;
+  padding: 10px 30px;
   width: fit-content;
   border: 1px solid var(--black);
-  background-color: var(--white);
+  background: none;
   color: var(--black);
   transition: background-color 0.25s ease-in-out;
 }
@@ -323,6 +324,8 @@ ul {
   position: absolute;
   top: 0;
   left: -10000px;
+  width: 1px;
+  height: 1px;
 }
 .home__categories {
   padding-top: 40px;
@@ -337,6 +340,128 @@ ul {
   margin-top: 50px;
 }
 
+/* Favorites */
+
+.home__favorites > article {
+  border-radius: 8px;
+  max-width: 69rem;
+  margin: 24px auto;
+  overflow: hidden;
+}
+
+.home__favorites > .favorite__one {
+  position: relative;
+  padding: 55px 24px;
+  background-color: var(--dark-pink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  gap: 24px;
+}
+.favorite__one picture > img {
+  height: 12.94rem;
+}
+.favorite__one .circles {
+  display: block;
+  position: absolute;
+  top: -121px;
+
+  width: 34.85rem;
+  height: 34.85rem;
+  /* 558px */
+}
+
+.favorite__one > h3 {
+  width: 8ch;
+  word-wrap: break-word;
+  line-height: 2.5rem;
+}
+
+.favorite__one > button {
+  background-color: var(--black);
+  border: none;
+  color: var(--white);
+}
+.favorite__one > button:hover {
+  background-color: var(--gray);
+}
+
+.home__favorites .favorite__two {
+  min-height: 20rem;
+  position: relative;
+  padding: 55px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+}
+.favorite__two picture {
+  display: block;
+  position: absolute;
+  right: 0px;
+  margin-bottom: 0px;
+  z-index: -1;
+  align-self: center;
+  width: fit-content;
+  height: fit-content;
+}
+.favorite__two picture > img {
+  min-height: 22.93rem;
+  width: 100%;
+}
+
+.favorite__three picture > img {
+  display: block;
+  min-height: 13.75rem;
+  width: 100%;
+  border-radius: 8px;
+}
+.favorite__three {
+  min-height: 26.5rem;
+  flex-direction: column;
+  display: flex;
+  gap: 24px;
+}
+.favorite__three > .fav__three__text {
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  min-height: 13.75rem;
+  border-radius: 8px;
+  justify-content: center;
+  gap: 32px;
+  padding: 0px 24px;
+}
+/* About us */
+.about__us {
+  max-width: 69rem;
+  margin: 24px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.about__us picture > img {
+  display: block;
+  min-height: 18.75rem;
+  width: 100%;
+  border-radius: 8px;
+}
+.about__us > h3 {
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+.color__accent {
+  color: var(--dark-pink);
+}
+.about__text {
+  color: var(--gray);
+}
 /* ***************************************************** 
             TABLET  STYLES
 ********************************************************
