@@ -462,6 +462,35 @@ ul {
 .about__text {
   color: var(--gray);
 }
+
+/* Footer */
+
+footer {
+  background-color: var(--dark-gray);
+}
+
+footer a.subtitle {
+  font-weight: 400;
+}
+footer > p {
+  color: var(--gray);
+}
+.bold {
+  font-weight: 700;
+}
+.filter__accent {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(41%) saturate(5719%)
+    hue-rotate(326deg) brightness(90%) contrast(88%);
+}
+
+.socials img:hover {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(41%) saturate(5719%)
+    hue-rotate(326deg) brightness(90%) contrast(88%);
+}
+
+nav a:hover {
+  color: var(--dark-pink);
+}
 /* ***************************************************** 
             TABLET  STYLES
 ********************************************************
@@ -537,7 +566,9 @@ ul {
     width: 100%;
     max-width: 100rem;
   }
-
+  /* nav a:hover {
+    color: var(--dark-pink);
+  } */
   .header__wrapper {
     width: 100%;
     justify-content: space-between;
@@ -558,6 +589,7 @@ ul {
   }
 
   .desktop__nav {
+    z-index: 1;
     display: block;
   }
 
