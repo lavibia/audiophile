@@ -625,6 +625,42 @@ nav a:hover {
   .about__us .about__text {
     padding: 0px 60px;
   }
+
+  /* footer */
+  footer {
+    position: relative;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(12, auto);
+    align-items: center;
+    text-align: left;
+    gap: 28px;
+  }
+  footer .accent__line {
+    position: absolute;
+    top: 0;
+    left: 40px;
+  }
+  footer .logo {
+    grid-area: 1/1/4/3;
+  }
+  footer > nav {
+    grid-area: 4/1/7/3;
+  }
+  footer > nav > ul {
+    flex-direction: row;
+  }
+  footer > p {
+    grid-area: 7/1/10/3;
+  }
+  footer .bold {
+    grid-area: 10/1/13/2;
+  }
+  footer .socials {
+    grid-area: 10/2/13/3;
+    justify-self: end;
+  }
 }
 
 /* 
