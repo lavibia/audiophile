@@ -466,11 +466,29 @@ ul {
 /* Footer */
 
 footer {
+  padding-top: 0px;
   background-color: var(--dark-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 48px;
+  align-items: center;
+  text-align: center;
+}
+.accent__line {
+  height: 4px;
+  width: 101px;
+  background-color: var(--dark-pink);
+  margin-top: 0;
 }
 
 footer a.subtitle {
-  font-weight: 400;
+  letter-spacing: 2px;
+}
+footer > nav > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 footer > p {
   color: var(--gray);
@@ -490,6 +508,12 @@ footer > p {
 
 nav a:hover {
   color: var(--dark-pink);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 /* ***************************************************** 
             TABLET  STYLES
