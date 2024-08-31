@@ -462,6 +462,59 @@ ul {
 .about__text {
   color: var(--gray);
 }
+
+/* Footer */
+
+footer {
+  padding-top: 0px;
+  background-color: var(--dark-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 48px;
+  align-items: center;
+  text-align: center;
+}
+.accent__line {
+  height: 4px;
+  width: 101px;
+  background-color: var(--dark-pink);
+  margin-top: 0;
+}
+
+footer a.subtitle {
+  letter-spacing: 2px;
+}
+footer > nav > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+footer > p {
+  color: var(--gray);
+}
+.bold {
+  font-weight: 700;
+}
+.filter__accent {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(41%) saturate(5719%)
+    hue-rotate(326deg) brightness(90%) contrast(88%);
+}
+
+.socials img:hover {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(41%) saturate(5719%)
+    hue-rotate(326deg) brightness(90%) contrast(88%);
+}
+
+nav a:hover {
+  color: var(--dark-pink);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
 /* ***************************************************** 
             TABLET  STYLES
 ********************************************************
@@ -537,7 +590,9 @@ ul {
     width: 100%;
     max-width: 100rem;
   }
-
+  /* nav a:hover {
+    color: var(--dark-pink);
+  } */
   .header__wrapper {
     width: 100%;
     justify-content: space-between;
@@ -558,6 +613,7 @@ ul {
   }
 
   .desktop__nav {
+    z-index: 1;
     display: block;
   }
 
