@@ -384,6 +384,7 @@ ul {
   background-color: var(--black);
   border: none;
   color: var(--white);
+  z-index: 1;
 }
 .favorite__one > button:hover {
   background-color: var(--gray);
@@ -475,6 +476,9 @@ footer {
   align-items: center;
   text-align: center;
 }
+/* footer > * {
+  max-width: 69rem;
+} */
 .accent__line {
   height: 4px;
   width: 101px;
@@ -485,6 +489,7 @@ footer {
 footer a.subtitle {
   letter-spacing: 2px;
 }
+
 footer > nav > ul {
   display: flex;
   flex-direction: column;
@@ -514,6 +519,10 @@ nav a:hover {
   display: flex;
   justify-content: center;
   gap: 16px;
+}
+.socials > li > a {
+  display: block;
+  line-height: 12px;
 }
 /* ***************************************************** 
             TABLET  STYLES
@@ -767,5 +776,51 @@ nav a:hover {
   }
   .home__categories {
     padding: 40px 40px;
+  }
+
+  /* footer */
+  footer {
+    padding-left: clamp(40px, calc(2.5rem + ((1vw - 11.8px) * 57.1429)), 280px);
+    padding-right: clamp(
+      40px,
+      calc(2.5rem + ((1vw - 11.8px) * 57.1429)),
+      280px
+    );
+    padding-top: 75px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(12, auto);
+    align-items: end;
+    text-align: left;
+    gap: 19px 0px;
+  }
+  footer .accent__line {
+    position: absolute;
+    top: 0;
+    left: clamp(40px, calc(2.5rem + ((1vw - 11.8px) * 57.1429)), 280px);
+  }
+  footer .logo {
+    align-self: baseline;
+    grid-area: 1/1/5/2;
+  }
+  footer > nav {
+    grid-area: 1/2/5/3;
+    justify-self: end;
+    align-self: baseline;
+    width: fit-content;
+  }
+  footer > nav > ul {
+    flex-direction: row;
+  }
+  footer > p {
+    grid-area: 5/1/9/2;
+  }
+  footer .bold {
+    grid-area: 9/1/13/2;
+  }
+  footer .socials {
+    grid-area: 5/2/9/3;
+    justify-self: end;
   }
 }
