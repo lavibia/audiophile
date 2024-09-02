@@ -922,3 +922,21 @@ nav a:hover {
     justify-self: end;
   }
 }
+
+/* **************************HEADPHONES************ */
+.hero__black__wrapper {
+  background-color: var(--black);
+  width: 100%;
+  max-width: 100rem;
+  margin: 0px auto;
+}
+.headphones__hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--header-height);
+  padding: 0px 24px;
+}
+.headphones__hero .h2 {
+  color: var(--white);
+}
