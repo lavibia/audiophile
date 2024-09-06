@@ -24,8 +24,6 @@
     />
 
     <link rel="stylesheet" href="style.css" />
-
-    <script src="script.js" defer></script>
   </head>
 
   <body>
@@ -129,6 +127,42 @@
       <hr class="divider" />
       <section class="headphones__hero"><h1 class="h2">Headphones</h1></section>
     </div>
+    <section class="category__products" id="category__products">
+      <article class="product__preview">
+        <img
+          src="./assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg"
+          alt=""
+        />
+        <div class="product__preview__text">
+          <div class="overline color__accent">New peoduct</div>
+          <h2 class="h2">Some headphones</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
+            voluptates reiciendis, omnis, asperiores nostrum perferendis fugit
+            dolorum facilis, exercitationem obcaecati hic nulla iste minima
+            sequi neque incidunt? Blanditiis, placeat magni?
+          </p>
+          <button class="btn__pink subtitle">See product</button>
+        </div>
+      </article>
+      <article class="product__preview">
+        <img
+          src="./assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg"
+          alt=""
+        />
+        <div class="product__preview__text">
+          <div class="overline color__accent">New peoduct</div>
+          <h2 class="h2">Some headphones</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
+            voluptates reiciendis, omnis, asperiores nostrum perferendis fugit
+            dolorum facilis, exercitationem obcaecati hic nulla iste minima
+            sequi neque incidunt? Blanditiis, placeat magni?
+          </p>
+          <button class="btn__pink subtitle">See product</button>
+        </div>
+      </article>
+    </section>
     <!-- 
   New product
   
@@ -289,5 +323,57 @@
         </li>
       </ul>
     </footer>
+    <!-- <script>
+      let url = new URL(document.location)
+      window.onpopstate = (event) => {
+        console.log(
+          `location: ${document.location}, state: ${JSON.stringify(
+            event.state
+          )}`
+        )
+      }
+      // url.pathname = '/src/headphones/some'
+      history.pushState({}, '', `${url}/some`)
+      // var stateObj = { foo: 'bar' }
+      // history.pushState(stateObj, 'page 2', 'bar.html')
+
+      // window.onpopstate = function (event) {
+      //   if (event && event.state) {
+      //     event.state.headphones
+      //   }
+      // }
+      // window.onpopstate = () =>
+      //   setTimeout(() => {
+      //     history.go(-2)
+      //   }, 0)
+      // document.onload(history.back())
+      // window.addEventListener('beforeunload', function (event) {
+      //   event.preventDefault()
+      //   history.pushState({}, '', 'http://127.0.0.1:5500/src/headphones.html')
+      // })
+      // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
+
+      // console.log(location.href)
+      // let test = 'test'
+      // var url = location.href
+      // var searchp = url
+      // searchp.set('type', 'test')
+      // url.search = searchp.toString()
+      // location.href = url
+      // var url = new URL('http://127.0.0.1:5500/src/headphones.html');
+      // var search_params = url.;
+
+      // // new value of "id" is set to "101"
+      // search_params.set('id', '101');
+
+      // // change the search property of the main url
+      // url.search = search_params.toString();
+
+      // // the new url string
+      // var new_url = url.toString();
+
+      // // output : http://demourl.com/path?id=101&topic=main
+      // console.log(new_url);
+    </script> -->
   </body>
 </html>

@@ -923,7 +923,7 @@ nav a:hover {
   }
 }
 
-/* **************************HEADPHONES************ */
+/* **************************CATEGORIES************ */
 .hero__black__wrapper {
   background-color: var(--black);
   width: 100%;
@@ -939,4 +939,47 @@ nav a:hover {
 }
 .headphones__hero .h2 {
   color: var(--white);
+}
+
+.category__products {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+  max-width: 69rem;
+  margin: 64px auto;
+}
+article.product__preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+}
+article.product__preview > img {
+  min-height: 22rem;
+  width: 100%;
+}
+.product__preview > .product__preview__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+/* *********************************************************
+                       DESKTOP CATEOGRY
+******************************************************* */
+@media only screen and (min-width: 62.5rem) {
+  article.product__preview:nth-child(odd) {
+    flex-direction: row;
+  }
+  article.product__preview > img {
+    min-height: 22rem;
+    width: 50%;
+  }
+  article.product__preview:nth-child(even) {
+    flex-direction: row-reverse;
+  }
 }
