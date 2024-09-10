@@ -1,0 +1,59 @@
+// populate html dom with category products
+//modify url
+
+export function renderProductsList(list, wrapper) {
+ // wrapper is category products
+ let otherProducts = [];
+ for (let i = 0; i < list.length; i++) {
+  let articleDOM = document.createElement('article');
+  articleDOM.classList.add('product__preview');
+  // img section
+
+  // product text info
+  let wrapperText = document.createElement('div');
+  wrapperText.classList.add('product__preview__text')
+
+  // new product text
+  if (list[i].new === true) {
+   let newProdDOM = document.createElement('div');
+   newProdDOM.classList.add('color__accent', 'overline');
+   newProdDOM.textContent = 'New Product';
+   wrapperText.appendChild(newProdDOM);
+  }
+
+  //title
+  let titleDOM = document.createElement('h2');
+  titleDOM.classList.add('h2');
+  titleDOM.textContent = `${list[i].name}`;
+  wrapperText.appendChild(titleDOM);
+
+  // description
+
+  let descDOM = document.createElement('p');
+  descDOM.textContent = list[i].description;
+  wrapperText.appendChild(descDOM);
+
+
+
+
+
+
+  // articleDOM.appendChild('imgDom')
+  articleDOM.appendChild(wrapperText);
+
+  if (wrapperText.childElementCount === 3) {
+   // if it is a new element add it to page first
+   wrapper.appendChild(articleDOM);
+
+  } else {
+   //add it after exiting loop
+   otherProducts.push(articleDOM);
+  }
+
+ }
+
+ //add products that are not new
+ for (let i = 0; i < otherProducts.length; i++) {
+  wrapper.appendChild(otherProducts[i]);
+ }
+}
