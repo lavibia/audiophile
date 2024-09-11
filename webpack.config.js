@@ -3,33 +3,59 @@ const JsonMinimizerPlugin = require("json-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fs = require('fs');
+
+// Function to get HTML files from a directory
+const getHtmlFiles = () => {
+  const htmlFiles = fs.readdirSync(path.resolve(__dirname, 'src/pages')).filter(file => file.endsWith('.html'));
+  return htmlFiles;
+};
+
+// Function to generate HtmlWebpackPlugin instances for each HTML file
+const createHtmlPlugins = () => {
+  const htmlFiles = getHtmlFiles();
+  return htmlFiles.map(file => {
+    const fileName = path.basename(file, '.html');
+    return new HtmlWebpackPlugin({
+      filename: file,
+      template: path.resolve(__dirname, `src/pages/${file}`),
+      inject: 'body',
+      chunks: [fileName, 'script'] // Includes both the specific JS file and the common JS file
+    });
+  });
+};
 
 module.exports = {
-  entry: './src/script.js',
-  mode: 'production',
+  entry: {
+    script: './src/scripts/script.js',
+    category: './src/scripts/category.js'
+  },
   devServer: {
     static: './dist',
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Audiophile | audio gear',
-      template: "src/index.html",
-    }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: './src/data.json',
-          to: path.resolve(__dirname, "dist"),
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     title: 'Audiophile | audio gear',
+  //     template: "src/index.html",
+  //   }),
+  //   new CopyPlugin({
+  //     patterns: [
+  //       {
+  //         from: './src/data.json',
+  //         to: path.resolve(__dirname, "dist"),
 
-        },
-      ],
-    }),
-  ],
+  //       },
+  //     ],
+  //   }),
+  // ],
 
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
+  plugins: [
+    ...createHtmlPlugins()
+  ],
   module: {
     rules: [
       {
@@ -59,4 +85,7 @@ module.exports = {
       new JsonMinimizerPlugin(),
     ],
   },
+  resolve: {
+    extensions: ['.js']
+  }
 };

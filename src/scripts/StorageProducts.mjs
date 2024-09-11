@@ -4,12 +4,12 @@
 
 
 
-export function getCategoryProducts(prodCategory) {
+export async function getCategoryProducts(prodCategory) {
   // Define the API endpoint
   let products = [];
-  let json = './data.json';
+  let json = '../data.json';
   // Fetch JSON data from the API
-  fetch(json)
+  await fetch(json)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -24,11 +24,12 @@ export function getCategoryProducts(prodCategory) {
     }
   }  
   console.log(products)
-  return products; 
+  
 })
     .catch((error) => {
       console.error("Error fetching data:", error);
     });
+return products;
 }
 
 // 
