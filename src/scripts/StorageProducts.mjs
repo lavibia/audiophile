@@ -7,7 +7,7 @@
 export async function getCategoryProducts(prodCategory) {
   // Define the API endpoint
   let products = [];
-  let json = './data.json';
+  let json = '../data.json';
   // Fetch JSON data from the API
   await fetch(json)
     .then((response) => {
