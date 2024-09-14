@@ -1,8 +1,6 @@
 const path = require('path');
-const JsonMinimizerPlugin = require("json-minimizer-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const fs = require('fs');
 
 // Function to get HTML files from a directory
@@ -26,64 +24,75 @@ const createHtmlPlugins = () => {
 };
 
 module.exports = {
+  mode: "production",
   entry: {
     script: './src/scripts/script.js',
     category: './src/scripts/category.js'
   },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/' // Correct routes for assets
+  },
   devServer: {
     static: './dist',
   },
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     title: 'Audiophile | audio gear',
-  //     template: "src/index.html",
-  //   }),
-  //   new CopyPlugin({
-  //     patterns: [
-  //       {
-  //         from: './src/data.json',
-  //         to: path.resolve(__dirname, "dist"),
 
-  //       },
-  //     ],
-  //   }),
-  // ],
 
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
   plugins: [
-    ...createHtmlPlugins()
+
+    ...createHtmlPlugins(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/assets', to: 'assets' }, // Keep assets structure
+
+      ]
+    })
   ],
   module: {
     rules: [
+      // Rule for JS files, transpile with Babel if needed
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      // Rule for importing JSON files
+      {
+        test: /\.json$/,
+        type: 'asset/resource'
+      },
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpe?g|gif|svg|webp)$/i,
         type: 'asset/resource',
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              context: 'src/assets', // Menține structura folderului în dist
+              outputPath: 'assets', // Fișierele imagini în `dist/assets`
+              publicPath: '/assets'
+            }
+          }
+        ]
       },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      }, {
-        test: /\.json$/i,
-        type: "asset/resource",
-      },
-
     ],
-
   },
+
+
   optimization: {
     minimize: true,
-    minimizer: [
-      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
-      // `...`
-      new JsonMinimizerPlugin(),
-    ],
+    // minimizer: [
+    //   // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+    //   // `...`
+    //   new JsonMinimizerPlugin(),
+    // ],
   },
   resolve: {
     extensions: ['.js']
