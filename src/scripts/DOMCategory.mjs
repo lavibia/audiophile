@@ -1,5 +1,6 @@
 // populate html dom with category products
 //modify url
+// import '../assets/*.jpg';
 
 export function renderProductsList(list, wrapper) {
  // wrapper is category products
@@ -8,6 +9,30 @@ export function renderProductsList(list, wrapper) {
   let articleDOM = document.createElement('article');
   articleDOM.classList.add('product__preview');
   // img section
+  let pictureDOM = document.createElement('picture');
+
+  pictureDOM.innerHTML = `
+            <source
+              media="(max-width: 35.74rem)"
+              srcset=".${list[i].categoryImage.mobile}"
+              width="100%"
+              height="auto"
+            />
+            <source
+              media="(max-width: 62.4rem)"
+              srcset='.${list[i].categoryImage.tablet}'
+              width="100%"
+              height="auto"
+            />
+            <source
+              media="(min-width: 62.4rem)"
+              srcset='.${list[i].categoryImage.desktop}'
+              width="100%"
+              height="auto"
+            />
+            <img src=".${list[i].categoryImage.mobile}" alt="" />
+
+  `
 
   // product text info
   let wrapperText = document.createElement('div');
@@ -38,7 +63,7 @@ export function renderProductsList(list, wrapper) {
 
 
 
-  // articleDOM.appendChild('imgDom')
+  articleDOM.appendChild(pictureDOM);
   articleDOM.appendChild(wrapperText);
 
   if (wrapperText.childElementCount === 3) {
