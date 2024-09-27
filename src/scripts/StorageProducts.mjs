@@ -32,6 +32,35 @@ export async function getCategoryProducts(prodCategory) {
 return products;
 }
 
+
+export async function getProductDetails(prodSlug) {
+  // Define the API endpoint
+  let details;
+  // let json = '../data.json';
+  // Fetch JSON data from the API
+  await fetch(json)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // console.log(data[0].category)
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].slug.toString() === prodSlug) {
+details= data[i];
+        }
+      }
+      // console.log(details);
+
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+// console.log(details)
+  return details;
+}
 // 
 // let result =[];
 //  result = await fetch('./data.json').then(result=>result.json()
