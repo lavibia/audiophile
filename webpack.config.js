@@ -27,7 +27,8 @@ module.exports = {
   mode: "production",
   entry: {
     script: './src/scripts/script.js',
-    category: './src/scripts/category.js'
+    category: './src/scripts/category.js',
+    product: './src/scripts/product.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -88,11 +89,6 @@ module.exports = {
 
   optimization: {
     minimize: true,
-    // minimizer: [
-    //   // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
-    //   // `...`
-    //   new JsonMinimizerPlugin(),
-    // ],
   },
   resolve: {
     extensions: ['.js']
