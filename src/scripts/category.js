@@ -9,15 +9,17 @@ import { renderProductsList } from "./DOMCategory.mjs";
 window.onload = async function () {
  const urlParams = new URLSearchParams(window.location.search);
  const category = urlParams.get('category');
- // window.history.replaceState({}, '', `category.html?category=${category}`);
+ window.history.replaceState({}, '', `category.html?category=${category}`);
  if (category) {
+  //set Page Header
+  let headerTitle = document.querySelector('.category__hero>#categoryTitle')
+  headerTitle.textContent = `${category}`;
 
-  let list = await getCategoryProducts(category)
-  console.log(list);
-  let wrapper = document.querySelector('.category__products')
-  console.log(wrapper)
+  //load product list
+  let list = await getCategoryProducts(category);
+  let wrapper = document.querySelector('.category__products');
   renderProductsList(list, wrapper);
  } else {
-  console.error('No category specified');
+  console.error('No category found');
  }
 };
