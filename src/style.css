@@ -983,3 +983,49 @@ article.product__preview > img {
     flex-direction: row-reverse;
   }
 }
+
+/* ************************PRODUCTS DETAILS************************* */
+
+.quantity {
+  display: flex;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quantity button {
+  background-color: var(--light-gray);
+  color: var(--gray);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  width: 120px;
+  min-height: 48px;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.quantity button:hover {
+  color: var(--dark-pink);
+}
+
+.input-box {
+  width: 80px;
+  text-align: center;
+  border: none;
+  padding: 8px 10px;
+  font-size: 16px;
+  outline: none;
+  background-color: var(--light-gray);
+}
+
+/* Hide the number input spin buttons */
+.input-box::-webkit-inner-spin-button,
+.input-box::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* 
+.input-box[type='number'] {
+  -moz-appearance: textfield;
+} */
