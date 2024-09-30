@@ -164,22 +164,87 @@
         </picture>
         <div class="product__description__text">
           <div class="color__accent overline">New Product</div>
-          <h2 class="h2">XX99 Mark II Headphones</h2>
+          <h1 class="h2">XX99 Mark II Headphones</h1>
           <p>
             The new XX99 Mark II headphones is the pinnacle of pristine audio.
             It redefines your premium headphone experience by reproducing the
             balanced depth and precision of studio-quality sound.
           </p>
 
-          <!-- <form action=""> -->
-          <div class="quantity">
-            <button class="minus" aria-label="Decrease">&minus;</button>
-            <input type="number" class="input-box" value="1" min="1" max="10" />
-            <button class="plus" aria-label="Increase">&plus;</button>
-          </div>
-          <button type="submit">Add to cart</button>
-          <!-- </form> -->
+          <form action="#" class="product-quantity">
+            <label for="quantity-value" class="visibily__hidden"
+              >Quantity</label
+            >
+            <div class="quantity">
+              <button
+                type="button"
+                class="minus"
+                aria-label="Decrease quantity"
+              >
+                &minus;
+              </button>
+              <input
+                type="number"
+                class="input-box"
+                id="quantity-value"
+                value="1"
+                min="1"
+                max="10"
+              />
+              <button type="button" class="plus" aria-label="Increase quantity">
+                &plus;
+              </button>
+            </div>
+            <button type="submit">Add to cart</button>
+          </form>
         </div>
+      </div>
+      <div class="product__features">
+        <h2 class="h3">Features</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+          autem consequuntur saepe inventore, atque necessitatibus voluptates ut
+          sapiente deleniti iure accusamus nam enim, quibusdam excepturi et quos
+          deserunt cumque corporis.
+        </p>
+      </div>
+      <div class="product__includes">
+        <h2 class="h3">Includees:</h2>
+        <ul>
+          <li><span class="subtitle">1x</span> something</li>
+        </ul>
+      </div>
+      <div class="product__gallery">
+        <picture>
+          <source
+            media="(max-width: 35.74rem)"
+            srcset="
+              ../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg
+            "
+            width="100%"
+            height="auto"
+          />
+          <source
+            media="(max-width: 62.4rem)"
+            srcset="
+              ../assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg
+            "
+            width="100%"
+            height="auto"
+          />
+          <source
+            media="(min-width: 62.4rem)"
+            srcset="
+              ../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg
+            "
+            width="100%"
+            height="auto"
+          />
+          <img
+            src="../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg"
+            alt=""
+          />
+        </picture>
       </div>
     </section>
     <!-- 
