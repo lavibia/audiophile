@@ -1,3 +1,4 @@
+import { renderProductDetails } from "./DOMProduct";
 import { getProductDetails } from "./StorageProducts.mjs";
 // import { renderProductsList } from "./DOMCategory.mjs";
 // console.log(getCategoryProducts('speakers'))
@@ -10,12 +11,11 @@ window.onload = async function () {
  window.history.replaceState({}, '', `product.html?title=${title}`);
  if (title) {
 
-
-  // let list = await getCategoryProducts(category)
+  let prodInfo = await getProductDetails(title)
   // console.log(list);
-  // let wrapper = document.querySelector('.category__products')
+  let wrapper = document.querySelector('.product__details')
   // console.log(wrapper)
-  // renderProductsList(list, wrapper);
+  renderProductDetails(prodInfo, wrapper);
  } else {
   console.error('No product found');
  }
