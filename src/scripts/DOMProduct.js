@@ -76,11 +76,12 @@ export function renderProductDetails(productInfo, wrapper) {
                 min="1"
                 max="10"
               />
-              <button type="button" class="plus" aria-label="Increase quantity">
+              <button type="button" class="plus" 
+              aria-label="Increase quantity">
                 &plus;
               </button>
             </div>
-            <button type="submit">Add to cart</button>`
+            <button type="submit" class="btn__pink subtitle">Add to cart</button>`
   wrapperText.appendChild(formDOM);
   descriptionDOM.appendChild(wrapperText);
 
@@ -92,6 +93,7 @@ export function renderProductDetails(productInfo, wrapper) {
   let featTitle = document.createElement('h2');
   featTitle.classList.add('h3');
   featTitle.textContent = 'Features';
+
 
   let featText = document.createElement('p');
   featText.textContent = productInfo.features;
@@ -116,7 +118,7 @@ export function renderProductDetails(productInfo, wrapper) {
   for (let i = 0; i < productInfo.includes.length; i++) {
     let itemDOM = document.createElement('li');
     itemDOM.innerHTML = `
-<span class="subtitle include__quantity">${productInfo.includes[i].quantity}x</span>${productInfo.includes[i].item}
+<span class="include__quantity">${productInfo.includes[i].quantity}x</span>${productInfo.includes[i].item}
 `
     includeList.appendChild(itemDOM);
   }
@@ -128,6 +130,7 @@ export function renderProductDetails(productInfo, wrapper) {
   // galery product
   let orderGallery = ['first', 'second', 'third']
   let galleryDOM = document.createElement('div');
+  galleryDOM.classList.add('product__details__gallery');
   for (let i = 0; i < orderGallery.length; i++) {
     let galleryPic = document.createElement('picture');
     galleryPic.innerHTML = `<source

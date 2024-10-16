@@ -3,7 +3,9 @@ import { getProductDetails } from "./StorageProducts.mjs";
 // import { renderProductsList } from "./DOMCategory.mjs";
 // console.log(getCategoryProducts('speakers'))
 
-
+// window.addEventListener("load", () => {
+//  loadEdit().then(/* callback function here */);
+// }, false);
 
 window.onload = async function () {
  const urlParams = new URLSearchParams(window.location.search);
@@ -19,26 +21,27 @@ window.onload = async function () {
  } else {
   console.error('No product found');
  }
-};
-updateButtonStates();
-document.getElementById("go-back").addEventListener("click", () => {
- history.back();
-});
+
+ // Quantity managemenct
+ document.querySelector(".quantity").addEventListener("click", (Event) => {
+  if (Event.target.classList.contains("minus")) {
+   decreaseQuantityDOM();
+  } else if (Event.target.classList.contains("plus")) {
+   increaseQuantityDOM();
+  }
+ })
+ document.querySelector(".quantity>.input-box").addEventListener("focusout", handleQuantityChange);
+
+ //Adding to cart products
+ document.querySelector("form.product-quantity>button").addEventListener('click', (Event) => {
+  window.alert("Hehe")
+  Event.preventDefault();
+ })
+
+}
 
 
 
-
-
-
-// Quantity management
-document.querySelector(".quantity").addEventListener("click", (Event) => {
- if (Event.target.classList.contains("minus")) {
-  decreaseQuantityDOM();
- } else if (Event.target.classList.contains("plus")) {
-  increaseQuantityDOM();
- }
-})
-document.querySelector(".quantity>.input-box").addEventListener("focusout", handleQuantityChange);
 
 function decreaseQuantityDOM() {
 
