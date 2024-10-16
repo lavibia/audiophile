@@ -1032,11 +1032,29 @@ li:has(.include__quantity) {
 .product__details__gallery {
   gap: 20px;
 }
-.product__details__gallery > picture {
+.product__details__gallery > picture,
+.other__like__card > picture {
   border-radius: 10px;
   overflow: hidden;
   height: fit-content;
 }
-.product__details__gallery img {
+.product__details__gallery img,
+.other__like__card img {
   display: block;
+}
+.product__details > div.others__like {
+  padding: 50px 0px;
+  gap: 40px;
+  align-items: center;
+}
+.others__like > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.other__like__card {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
 }

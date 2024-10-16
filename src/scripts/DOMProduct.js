@@ -160,6 +160,7 @@ export function renderProductDetails(productInfo, wrapper) {
   //you may also like
 
   let othersLikeDOM = document.createElement('div');
+  othersLikeDOM.classList.add("others__like")
   //title
   let othersLikeTitle = document.createElement('h2');
   othersLikeTitle.classList.add('h3');
@@ -171,7 +172,7 @@ export function renderProductDetails(productInfo, wrapper) {
   let othersList = document.createElement('ul');
   for (let i = 0; i < productInfo.others.length; i++) {
     let otherItem = document.createElement('li');
-
+    otherItem.classList.add("other__like__card")
     //image for item you may like
     let othersLikeImg = document.createElement('picture');
     othersLikeImg.innerHTML = `<source
