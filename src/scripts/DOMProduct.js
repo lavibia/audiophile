@@ -52,6 +52,12 @@ export function renderProductDetails(productInfo, wrapper) {
   descDOM.textContent = productInfo.description;
   wrapperText.appendChild(descDOM);
 
+  // price
+
+  let price = document.createElement('h4');
+  price.classList.add("h6");
+  price.textContent = `$ ${productInfo.price}`;
+  wrapperText.appendChild(price);
 
   // form quantity
   let formDOM = document.createElement('form');

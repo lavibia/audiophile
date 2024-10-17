@@ -1058,3 +1058,44 @@ li:has(.include__quantity) {
   gap: 32px;
   align-items: center;
 }
+
+/* **********************************PRODUCT PAGE TABLET STYLES ******************************************************** */
+@media only screen and (min-width: 40.6rem) /* 650px */ {
+  section.product__details > div.product__description {
+    display: flex;
+    flex-direction: row;
+    gap: 69px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  section.product__details > div:has(.include__quantity) {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    align-items: flex-start;
+  }
+  section.product__details > div:has(.include__quantity) > * {
+    width: 50%;
+  }
+  section.product__details > .product__details__gallery {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 4fr 6fr;
+    row-gap: 20px;
+    column-gap: 18px;
+  }
+  .product__details__gallery > picture:first-child {
+    grid-area: 1/1/2/2;
+  }
+  .product__details__gallery > picture:last-child {
+    grid-area: 1/2/3/3;
+  }
+  .product__details__gallery > picture:nth-child(2) {
+    grid-area: 2/1/3/2;
+  }
+  section.product__details > .others__like > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+  }
+}
