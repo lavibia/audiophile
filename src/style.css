@@ -999,7 +999,7 @@ li:has(.include__quantity) {
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
-  width: auto;
+  width: 20px;
   /* min-height: 48px; */
   text-align: center;
   transition: color 0.2s;
@@ -1008,7 +1008,7 @@ li:has(.include__quantity) {
   color: var(--dark-pink);
 }
 .input-box {
-  /* width: 80px; */
+  width: 30px;
   text-align: center;
   border: none;
   padding: 8px 10px;
@@ -1097,5 +1097,43 @@ li:has(.include__quantity) {
     display: flex;
     flex-direction: row;
     gap: 11px;
+  }
+}
+/* ************************************DESKTOP PRODUCT
+******************************************************* */
+@media only screen and (min-width: 62.5rem) {
+  nav > #go-back {
+    padding-top: 40px;
+  }
+  section.product__details {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 120px;
+    row-gap: 0px;
+  }
+  section.product__details > div.product__description {
+    grid-area: 1/1/2/3;
+    gap: 125px;
+  }
+  section.product__details > div.product__features {
+    grid-area: 2/1/3/2;
+  }
+  section.product__details > div:has(.include__quantity) {
+    grid-area: 2/2/3/3;
+    display: flex;
+    min-height: 318px;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+  }
+  section.product__details > div:has(.include__quantity) > * {
+    width: 100%;
+  }
+  section.product__details > div.product__details__gallery {
+    grid-area: 3/1/4/3;
+  }
+  section.product__details > div.others__like {
+    grid-area: 4/1/5/3;
   }
 }
